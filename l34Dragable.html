@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>dragable Method</title>
+    <link rel="stylesheet" href="./libs/jquery-ui.min.css" />
+    <style type="text/css">
+      .container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .box {
+        width: 250px;
+        height: 150px;
+        background-color: steelblue;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box" id="dragme">
+        <p>Drag Me Whereever you want !!!!</p>
+      </div>
+    </div>
+    <script src="./libs/jquery-3.6.0.min.js"></script>
+    <script src="./libs/jquery-ui.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // console.log("hi");
+        $("#dragme").draggable({
+          start: function () {
+            $(this).css("background-color", "violet");
+          },
+          drag: function () {
+            $(this).text("Element is moving");
+          },
+          stop: function () {
+            $(this).text("Element is stop");
+          },
+          // revert: true,
+          // revertDuration: 3000,
+          revert: function () {
+            $(this).css("background-color", "orange");
+            return true;
+          },
+          revertDuration: 3000,
+          //x,y
+          grid: [100, 200],
+        });
+      });
+    </script>
+  </body>
+</html>

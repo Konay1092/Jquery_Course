@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>:first and :last Selector</title>
+
+	<style type="text/css">
+		
+		body{
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		/* .box{
+			width: 200px;
+			height: 100px;
+		} */
+
+		li{
+			padding: 5px;
+			margin-bottom: 5px;
+			border-radius: 10px;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<ul>
+			<li>Red</li>
+			<li>Green</li>
+			<li>Blue</li>
+			<li></li>
+			<li>Pink</li>
+			<li>White</li>
+			<li></li>
+			<li>violet</li>
+		</ul>
+
+		<hr/>
+
+		<ol>
+			<li>Apple</li>
+			<li>Orange</li>
+			<li></li>
+			<li></li>
+			<li>Mango</li>
+			<li></li>
+			<li>Peach</li>
+		</ol>
+
+	</div>
+
+	<script src="./libs/jquery-3.6.0.min.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+		
+		$(document).ready(function(){
+			// console.log("hi");
+
+			//:first
+
+            $("ul li:first").css({
+                "color":"#fff",
+                "background-color":"steelblue"
+            });
+
+            $("ul li:last").css({
+                "color":"#fff",
+                "background-color":"steelblue"
+            });
+
+            $("ol li:first").css({
+                "color":"#fff",
+                "background-color":"steelblue"
+            });
+
+            $("ol li:last").css({
+                "color":"#fff",
+                "background-color":"steelblue"
+            });
+
+		});
+		
+	</script>
+
+</body>
+</html>

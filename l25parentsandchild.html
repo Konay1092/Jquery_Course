@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parents and Child Method</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        flex-direction: column;
+      }
+      .container {
+        width: 900px;
+        background-color: #f4f4f4;
+        padding: 20px;
+
+        display: flex;
+      }
+      .box {
+        width: 150px;
+        height: 300px;
+        margin: 0 30px;
+      }
+      .square1 {
+        background-color: green;
+      }
+      .square2 {
+        background-color: orange;
+      }
+      .square3 {
+        background-color: blue;
+      }
+      .square4 {
+        background-color: violet;
+      }
+      .square5 {
+        background-color: brown;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>parents & child mehod</h1>
+      <p>This is awesome jquery version 3.6</p>
+    </div>
+    <div class="container">
+      <div class="box square1">Box 1</div>
+
+      <div class="box square2">Box 2</div>
+
+      <div class="box square3">Box 3</div>
+
+      <div class="box square4">Box 4</div>
+
+      <div class="box square5">Box 5</div>
+    </div>
+    <div>
+      <p>hay guys.What is your plans after class.!!!</p>
+    </div>
+
+    <script src="libs/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // console.log("hay");
+        //parents()
+        // $(".box").click(function () {
+        //   $(this).parent().css({
+        //     background: "darkblue",
+        //     "box-shadow": "5px 5px 10px rgba(0,0,0,0.5)",
+        //   });
+        // });
+        //children()
+        // $(".container").click(function () {
+        //   $(this).children().css("background-color", "red");
+        // });
+        // $(".container").click(function () {
+        //   $(this).children(".square1").css("background-color", "red");
+        // });
+        //multi children
+        // $(".container").click(function () {
+        //   $(this).children(".square1,.square3").css("background-color", "red");
+        // });
+        //siblings()
+        // $(".square1").click(function () {
+        //   $(this).siblings().css("background-color", "red");
+        // });
+        // $(".square1").click(function () {
+        //   $(this).siblings(".square4").css("background-color", "red");
+        // });
+        // $(".square1").click(function () {
+        //   $(this).siblings(".square2,.square5").css("background-color", "red");
+        // });
+        //:nth-of-type()
+        //n
+        //odd
+        //event
+        //formula
+        //:nth-child()
+        //n
+        //odd
+        //event
+        //formula
+        // $(".square1").click(function () {
+        //   $(".box:nth-child(3)").css("background-color", "black");
+        // });
+        // $(".square1").click(function () {
+        //   $(".box:nth-child(odd)").css("background-color", "red");
+        // });
+        // $(".square1").click(function () {
+        //   $(".box:nth-child(even)").css("background-color", "red");
+        // });
+        //:nth-of-type(n)
+        // $(".square1").click(function () {
+        //   $(".box:nth-of-type(3)").css("background-color", "black");
+        // });
+        // $(".square1").click(function () {
+        //   $(".box:nth-of-type(odd)").css("background-color", "black");
+        // });
+        // $(".square1").click(function () {
+        //   $(".box:nth-of-type(even)").css("background-color", "black");
+        // });
+        //formula
+        // $(".square1").click(function () {
+        //   $(".box:nth-of-type(1n)").css("background-color", "gray");
+        // });
+        // $(".square1").click(function () {
+        //   $(".box:nth-of-type(2n)").css("background-color", "gray");
+        // });
+        // $(".square1").click(function () {
+        //   $(".box:nth-of-type(2n+1)").css("background-color", "gray");
+        // });
+        // $(".square1").click(function () {
+        //   $(".box:nth-of-type(3n)").css("background-color", "gray");
+        // });
+        $(".square1").click(function () {
+          $(".box:nth-of-type(3n+1)").css("background-color", "gray");
+        });
+      });
+    </script>
+  </body>
+</html>

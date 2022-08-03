@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UI Sortable</title>
+    <link rel="stylesheet" href="./libs/jquery-ui.min.css" type="text/css" />
+    <style type="text/css">
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container,
+      .container2 {
+        width: 600px;
+        padding: 20px;
+        background-color: #f4f4f4;
+        margin: 0 10px;
+        box-shadow: 5px 0px 10px #888;
+      }
+      td,
+      th {
+        border: 1px solid #000;
+        padding: 5px;
+        text-align: center;
+      }
+      tr {
+        cursor: pointer;
+      }
+      .spacing {
+        background-color: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Closing Inventory</h1>
+      <table id="mydata">
+        <thead>
+          <th>ID</th>
+          <th>Product Name</th>
+          <th>Unit Price</th>
+          <th>Qty</th>
+          <th>Category</th>
+        </thead>
+        <tbody>
+          <tr class="mov">
+            <td>1001</td>
+            <td>Redbull</td>
+            <td>700</td>
+            <td>10</td>
+            <td>Food</td>
+          </tr>
+          <tr class="mov">
+            <td>1002</td>
+            <td>Potato</td>
+            <td>50</td>
+            <td>10</td>
+            <td>Food</td>
+          </tr>
+          <tr class="mov">
+            <td>1003</td>
+            <td>Carbone</td>
+            <td>500</td>
+            <td>10</td>
+            <td>Food</td>
+          </tr>
+          <tr class="stop">
+            <td>1004</td>
+            <td>Santister</td>
+            <td>200</td>
+            <td>50</td>
+            <td>Non Food</td>
+          </tr>
+          <tr class="stop">
+            <td>1005</td>
+            <td>SHAMPOO</td>
+            <td>700</td>
+            <td>10</td>
+            <td>Non Food</td>
+          </tr>
+          <tr class="mov">
+            <td>1006</td>
+            <td>Shark</td>
+            <td>700</td>
+            <td>10</td>
+            <td>Food</td>
+          </tr>
+          <tr class="stop">
+            <td>1007</td>
+            <td>Hair-JEl</td>
+            <td>700</td>
+            <td>10</td>
+            <td>Non Food</td>
+          </tr>
+          <tr class="mov">
+            <td>1008</td>
+            <td>Cheese</td>
+            <td>120</td>
+            <td>10</td>
+            <td>Food</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="container2">
+      <h1>Food Inventory</h1>
+      <table id="mydata2">
+        <thead>
+          <th>ID</th>
+          <th>Product Name</th>
+          <th>Unit Price</th>
+          <th>Qty</th>
+          <th>Category</th>
+        </thead>
+        <tbody>
+          <tr class="mov">
+            <td>1009</td>
+            <td>Jelly</td>
+            <td>700</td>
+            <td>10</td>
+            <td>Food</td>
+          </tr>
+          <tr class="mov">
+            <td>1010</td>
+            <td>Cake</td>
+            <td>50</td>
+            <td>10</td>
+            <td>Food</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script src="./libs/jquery-3.6.0.min.js"></script>
+    <script src="./libs/jquery-ui.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#mydata tbody").sortable({
+          //   axis: "X",
+          //   axis: "Y",
+          containment: ".container2",
+          // WE can call to class but no need to put "."
+          placeholder: "spacing",
+          connectWith: "#mydata2 tbody",
+          cancel: ".stop",
+          //   we can move but can't put into cancel items single or group
+          items: ".mov",
+        });
+        $("#mydata2 tbody").sortable({
+          //   axis: "X",
+          //   axis: "Y",
+          //   containment: "#mydata2",
+          // WE can call to class but no need to put "."
+          placeholder: "spacing",
+          connectWith: "#mydata tbody",
+          cancel: ".mov",
+        });
+      });
+    </script>
+  </body>
+</html>
+<!-- 28ST -->

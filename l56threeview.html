@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Three View</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        width: 700px;
+      }
+      .browserpannel {
+        border: 3px solid #f4f4f4;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+      .tabbar {
+        background-color: #f1f1f1;
+        padding: 10px;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+      }
+      .content {
+        padding: 20px;
+      }
+      ul {
+        list-style-type: none;
+      }
+      ul .bigcap {
+        cursor: pointer;
+      }
+      .bigcap::before {
+        content: "\25B6";
+        font-family: "font Awesome 5 Free";
+        color: #000;
+        margin-right: 6px;
+        display: inline-block;
+      }
+      .bigcap.godown::before {
+        transform: rotate(90deg);
+      }
+      .nested {
+        display: none;
+      }
+      .active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="browserpannel">
+        <div class="tabbar">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        <div class="content">
+          <h3>MS.July</h3>
+          <p>Chief Technology Officer</p>
+          <ul>
+            <li>
+              <span class="bigcap">Summary Bio</span>
+              <ul class="nested">
+                <li>Age :35</li>
+                <li>Marital Status :married</li>
+                <li>Nationality:Japanese</li>
+              </ul>
+            </li>
+
+            <li>
+              <span class="bigcap">Working Experience</span>
+              <ul class="nested">
+                <li>
+                  <span class="bigcap">2020</span>
+                  <ul class="nested">
+                    <li>2020-Project Director At STUDO Techonology Co,.ltd</li>
+                    <li>2018-Project Director At BABU Techonology Co,.ltd</li>
+                    <li>
+                      <span class="bigcap">2015</span>
+                      <ul class="nested">
+                        <li>
+                          2020-Project Director At STUDO Techonology Co,.ltd
+                        </li>
+                        <li>
+                          2018-Project Director At BABU Techonology Co,.ltd
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="./libs/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".bigcap").click(function () {
+          $(this).toggleClass("godown");
+          $(this).siblings().toggleClass("active");
+        });
+      });
+    </script>
+  </body>
+</html>

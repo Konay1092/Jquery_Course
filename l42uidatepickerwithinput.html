@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date picker with input</title>
+    <link rel="stylesheet" href="./libs/jquery-ui.min.css" />
+  </head>
+  <body>
+    <script src="./libs/jquery-3.6.0.min.js"></script>
+    <script src="./libs/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#arrival").datepicker({
+          numberofMonths: 2,
+          //numberofMonths:[2,4],
+          showAnim: "slide",
+          //showAnim:"slideDown"
+        });
+      });
+    </script>
+  </body>
+</html>

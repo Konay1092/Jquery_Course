@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attribute and Remove Attribute Method</title>
+    <style type="text/css">
+      body {
+        height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        width: 800px;
+        background: #f4f4f4;
+        padding: 20px;
+      }
+      .text-primary {
+        color: rgb(20, 97, 173);
+      }
+      .bg-info {
+        background-color: aqua;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .underline {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <img src="img/cat2.jpg" alt="logo1" width="100" />
+        <h1 id="1">Hello Myanmar</h1>
+        <h1 id="2">Hello Thailand</h1>
+        <h1 id="3">Hello Indonesia</h1>
+        <h1 id="4">Hello Srilanka</h1>
+      </div>
+      <button type="button" id="txtpri">text-primary</button>
+      <button type="button" id="bginfo">bg-info</button>
+      <button type="button" id="txtbg">textlight-bginfo</button>
+      <button type="button" id="multibtn">Multi-attr</button>
+      <button type="button" id="rmbg">remove Attr</button>
+      <button type="button" id="textcnt">Textcenter</button>
+      <button type="button" id="rmclass">remove textprimary</button>
+      <button type="button" id="hasclass">has class</button>
+      <button type="button" id="togclass">Toggleclass</button>
+    </div>
+    <script src="libs/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        //console.log("hi");
+        //$(seletor).attr(attribute,value)
+        $("#txtpri").click(function () {
+          $("h1").attr("class", "text-primary");
+        });
+        $("#bginfo").click(function () {
+          $("h1").attr("class", "bg-info");
+        });
+        $("#txtbg").click(function () {
+          $("h1").attr("class", "text-primary bg-info");
+        });
+        $("#multibtn").click(function () {
+          $("img").attr({
+            alt: "logo2",
+            width: "200",
+            src: "img/cat3.jpg",
+            title: "this is title",
+            abc: "this is logo image",
+          });
+        });
+
+        //removeAttr()
+        $("#rmbg").click(function () {
+          $("h1").removeAttr(" id class ");
+        });
+
+        //_______________________________________
+        //class()
+        //$(selector).addClass()
+        $("#textcnt").click(function () {
+          // $("h1").addClass("text-center");
+          $("h1").addClass("underline text-center");
+        });
+
+        //removeclass()
+        $("#rmclass").click(function () {
+          $("h1").removeClass("text-primary bg-info");
+        });
+
+        // _______________________________________________
+        //hasclass()
+        $("#hasclass").click(function () {
+          window.alert($("h1").hasClass("text-center"));
+        });
+        //toggleClass()
+        $("#togclass").click(function () {
+          $("h1").toggleClass("text-center");
+        });
+      });
+    </script>
+  </body>
+</html>
+30ATT

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tooltip Method</title>
+    <link rel="stylesheet" href="./libs/jquery-ui.min.css" />
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        width: 900px;
+        background-color: #f4f4f4;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h3>How to use Jquery Tooltip !</h3>
+      <p>
+        <a href="#" id="ttone" title="This is  tooltip of JqueryUi">
+          It is used
+        </a>
+        in conjuction with a cursor, when a user hovers the pointer over an item
+        without clicking.
+      </p>
+    </div>
+    <script src="./libs/jquery-3.6.0.min.js"></script>
+    <script src="./libs/jquery-ui.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        console.log("hay");
+        $("#ttone").tooltip({
+          //   show: 3000,
+          //   hide: 5000,
+          //   show: "bounce",
+          //   hide: "explode",
+
+          show: {
+            effect: "shake",
+            duration: 2000,
+          },
+
+          hide: {
+            effect: "explode",
+            duration: 3000,
+          },
+          track: true,
+          //   content: "This is jQuery UI.Thanks for using our libs",
+          content: function () {
+            // return `<img src="./img/cat2.jpg" width="150px"/>`;
+            return `
+            <img src="./img/cat2.jpg" width="150px"/> 
+            <h5>This is our company Logo</h5>
+            <small>Lorem ipsum dolor, sit amet consectetur adipisicing elit.  Repudiandae deleniti aliquam cumque accusamus voluptate nulla ad officiis.</small>
+            `;
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
+<!-- 5TT -->

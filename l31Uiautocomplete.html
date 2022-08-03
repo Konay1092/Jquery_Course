@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UI autocomplete Method</title>
+    <link rel="stylesheet" href="./libs/jquery-ui.min.css" />
+    <style>
+      body {
+        font-family: sans-serif;
+        height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        width: 900px;
+        background-color: #f4f4f4;
+        padding: 20px;
+      }
+      .form-group label {
+        display: block;
+        font-size: 20px;
+        margin-bottom: 30px;
+      }
+      .form-control {
+        width: 100%;
+        font-size: 20px;
+        padding: 5px;
+      }
+      .justify-content-end {
+        display: flex;
+        justify-content: end;
+      }
+      .btn {
+        font-size: 15px;
+        padding: 10px 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form action="" method="">
+        <div class="form-group">
+          <label for="job">Job Title</label>
+          <input type="text" name="job" id="job" class="form-control" />
+        </div>
+        <div class="justify-content-end">
+          <input type="submit" id="submit" class="btn" />
+        </div>
+      </form>
+    </div>
+    <script src="./libs/jquery-3.6.0.min.js"></script>
+    <script src="./libs/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        var positions = [
+          "CEO",
+          "General Mananger",
+          "Manager",
+          "Vice Mananger",
+          "Sales Mananger",
+          "Supervisiors",
+          "CFO",
+          "Finance Manager",
+          "Accountanat",
+          "Senior Accountant",
+        ];
+
+        $("#job").autocomplete({
+          source: positions,
+        });
+
+        $("form").submit(function () {
+          var getjob = $("#job").val();
+          window.alert(getjob);
+        });
+      });
+    </script>
+  </body>
+</html>
+<!-- 20AC -->

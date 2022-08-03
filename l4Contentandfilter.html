@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content and Filter</title>
+  </head>
+  <body>
+    <h1>This is awesome <u>js libary</u></h1>
+    <h1>Are you ready to learn Jquery ?</h1>
+    <h2>This is awesome <i>js libary.</i></h2>
+    <h2>Are you ready to learn jQuery ?</h2>
+    <script src="libs/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        console.log("hay");
+        var gettext = $("h1").contents();
+        console.log(gettext);
+        gettext = $("h1").contents().text();
+        console.log(gettext);
+        gettext = $("h1,h2").contents().text();
+        console.log(gettext);
+        gettext = $("h1,h2").contents().filter("u,i").text();
+        console.log(gettext);
+      });
+    </script>
+  </body>
+</html>
