@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi_Inputs_Fields</title>
+    <!-- boostrap css 1 js 1 -->
+    <link
+      rel="stylesheet"
+      href="./libs/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./libs/jquery-ui.min.css" />
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center mb-4">
+          <h5>Multi_Inputs_Fields</h5>
+        </div>
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <form action="" method="">
+            <div id="expboxes" class="input-group mb-3 expboxes">
+              <input
+                type="text"
+                name="exps[]"
+                class="form-control form-control-sm rounded-0"
+                placeholder="Enter your Experience"
+              />
+            </div>
+            <div class="d-flex justify-content-end">
+              <button
+                type="button"
+                class="btn btn-success btn-sm rounded-0 addbtn"
+                data-increment="1"
+              >
+                ADD More Inputs
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+    </div>
+
+    <script src="./libs/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+    <script src="./libs/jquery-3.6.0.min.js"></script>
+    <script src="./libs/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        // console.log("hi");
+        $(".addbtn").click(function () {
+          var getnewid = $(this).data("increment");
+          //   console.log(" i am working");
+          var expboxes = $("#expboxes").wrap("<div></div>").parent().html();
+          console.log(expboxes);
+          $("#expboxes").unwrap();
+
+          //insertAfter
+          $(expboxes).insertAfter($(".expboxes").last());
+          //   $(expboxes).insertAfter($(".expboxes").first());
+
+          //insertbefore
+          //   $(expboxes).insertBefore($(".expboxes").last());
+          //   $(expboxes).insertBefore($(".expboxes").first());
+
+          $(".expboxes")
+            .last()
+            .attr("id", "expboxes" + getnewid);
+          $("#expboxes" + getnewid).append(`<button
+                type="button"
+                class="btn btn-danger btn-sm rounded-0 ms-3 removebtn"
+
+                data-id="removebtn'+getnewid+'"
+              >Remove</button>`);
+          getnewid++;
+          $(this).data("increment", getnewid);
+        });
+
+        $(document).on("click", ".removebtn", function () {
+          $(this).parent().remove();
+        });
+      });
+    </script>
+  </body>
+</html>
