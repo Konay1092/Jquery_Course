@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <title>Disable_Selection</title>
+  </head>
+  <body>
+    <div id="box1">
+      <h3>JQUERY Extension Functions</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi voluptas
+        culpa tenetur minima labore unde, dicta neque corrupti. Atque aut
+        suscipit repellendus commodi aliquam officia recusandae consectetur quo
+        nisi quae!
+      </p>
+    </div>
+    <div id="box2">
+      <h3>JQUERY Extension Functions</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi voluptas
+        culpa tenetur minima labore unde, dicta neque corrupti. Atque aut
+        suscipit repellendus commodi aliquam officia recusandae consectetur quo
+        nisi quae!
+      </p>
+    </div>
+    <div id="box3">
+      <h3>JQUERY Extension Functions</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi voluptas
+        culpa tenetur minima labore unde, dicta neque corrupti. Atque aut
+        suscipit repellendus commodi aliquam officia recusandae consectetur quo
+        nisi quae!
+      </p>
+    </div>
+    <script src="./libs/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        // console.log("hay");
+
+        //JQUERY Extenstion Function
+        //Object Type
+        jQuery.fn.extend({
+          disabledselectionbox1: function () {
+            return this.css("user-select", "none");
+          },
+          electionbox2: function () {
+            return this.css({
+              "background-color": "green",
+              color: "#fff",
+            });
+          },
+        });
+
+        $("#box1").disabledselectionbox1();
+        $("#box2").selectionbox2();
+
+        jQuery.fn.disabledselectionbox3 = function () {
+          return this.css("user-select", "none");
+        };
+        // $.fn.disabledselectionbox3 = function () {
+        //   return this.css("user-select", "none");
+        // };
+
+        $("#box3").disabledselectionbox3();
+      });
+    </script>
+  </body>
+</html>
